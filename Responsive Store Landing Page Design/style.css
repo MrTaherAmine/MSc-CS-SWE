@@ -1,0 +1,159 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= GLOBAL STYLING ================= */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Buttons */
+.btn {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e64a19;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: linear-gradient(135deg, #000000, #333333);
+    color: white;
+    padding-bottom: 50px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+/* Nav Menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    margin: 10px 0 20px;
+}
+
+.hero-btn {
+    text-decoration: none;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* Product grid layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Product cards */
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablet View */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 500px) {
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+}
