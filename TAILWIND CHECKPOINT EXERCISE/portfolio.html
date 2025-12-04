@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Taher Amine • Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- ================= HEADER ================= -->
+<header class="bg-black text-white p-5">
+  <nav class="flex flex-col md:flex-row justify-between items-center container mx-auto">
+    
+    <!-- Name -->
+    <h1 class="text-2xl font-bold">Taher Amine</h1>
+
+    <!-- Navigation -->
+    <ul class="flex mt-3 md:mt-0 gap-6">
+      <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+      <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+      <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section
+  id="home"
+  class="h-[70vh] bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')]
+         bg-cover bg-center">
+
+  <div class="bg-black/60 h-full flex flex-col justify-center items-center text-center text-white p-4">
+
+    <h2 class="text-4xl md:text-6xl font-bold mb-4">
+      Hello, I'm Taher
+    </h2>
+
+    <p class="max-w-lg text-lg">
+      Cybersecurity Expert & Web Development Enthusiast building modern digital experiences.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="container mx-auto py-16">
+  
+  <h2 class="text-center text-3xl font-bold mb-10">My Skills</h2>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+    <div class="bg-white p-5 rounded shadow">HTML</div>
+    <div class="bg-white p-5 rounded shadow">CSS</div>
+    <div class="bg-white p-5 rounded shadow">Tailwind</div>
+    <div class="bg-white p-5 rounded shadow">JavaScript</div>
+    <div class="bg-white p-5 rounded shadow">Bootstrap</div>
+    <div class="bg-white p-5 rounded shadow">Cybersecurity</div>
+    <div class="bg-white p-5 rounded shadow">GRC</div>
+    <div class="bg-white p-5 rounded shadow">ISO Auditing</div>
+
+  </div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="bg-gray-200 py-16">
+
+  <h2 class="text-center text-3xl font-bold mb-10">Projects</h2>
+
+  <div class="container mx-auto grid md:grid-cols-3 gap-6">
+
+    <!-- Card 1 -->
+    <div class="bg-white rounded shadow">
+      <img src="https://picsum.photos/300/200" class="w-full">
+      <div class="p-4">
+        <h3 class="font-bold text-xl">Portfolio Website</h3>
+        <p class="mt-2">Personal responsive website built with Tailwind CSS.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded shadow">
+      <img src="https://picsum.photos/301/200" class="w-full">
+      <div class="p-4">
+        <h3 class="font-bold text-xl">E-Commerce UI</h3>
+        <p class="mt-2">Online store landing design using CSS Grid.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded shadow">
+      <img src="https://picsum.photos/302/200" class="w-full">
+      <div class="p-4">
+        <h3 class="font-bold text-xl">Restaurant Page</h3>
+        <p class="mt-2">Bootstrap responsive restaurant website.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="container mx-auto py-16">
+
+  <h2 class="text-center text-3xl font-bold mb-10">Contact Me</h2>
+
+  <form class="max-w-xl mx-auto flex flex-col gap-4">
+
+    <input type="text" placeholder="Your Name"
+           class="border p-3 rounded">
+
+    <input type="email" placeholder="Your Email"
+           class="border p-3 rounded">
+
+    <textarea placeholder="Your Message"
+              class="border p-3 rounded"></textarea>
+
+    <button class="bg-black text-white py-3 rounded hover:bg-yellow-500">
+      Send Message
+    </button>
+
+  </form>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-white py-6">
+
+  <div class="flex flex-col md:flex-row justify-between items-center container mx-auto gap-3">
+
+    <p>© 2025 Taher Amine</p>
+
+    <div class="flex gap-4 text-xl">
+      <span>🌐</span>
+      <span>📧</span>
+      <span>📱</span>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

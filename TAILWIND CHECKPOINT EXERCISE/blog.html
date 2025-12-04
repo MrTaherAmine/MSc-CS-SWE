@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkyBlog</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-gray-100">
+
+<!-- ================= HEADER ================= -->
+<header class="bg-blue-600 text-white p-5">
+  <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+
+    <h1 class="text-2xl font-bold">SkyBlog</h1>
+
+    <ul class="flex gap-6 mt-3 md:mt-0">
+      <li><a href="#" class="hover:text-yellow-300">Home</a></li>
+      <li><a href="#" class="hover:text-yellow-300">Articles</a></li>
+      <li><a href="#" class="hover:text-yellow-300">About</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<!-- ================= FEATURED POSTS ================= -->
+<section class="container mx-auto py-16">
+
+  <h2 class="text-center text-3xl font-bold mb-10">Featured Posts</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <div class="bg-white rounded shadow">
+      <img src="https://picsum.photos/300/200">
+      <div class="p-4">
+        <h3 class="font-bold">Modern Web Design</h3>
+        <p>Discover UI trends for 2025</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded shadow">
+      <img src="https://picsum.photos/301/200">
+      <div class="p-4">
+        <h3 class="font-bold">Tailwind Tips</h3>
+        <p>Utility-first workflow mastery</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded shadow">
+      <img src="https://picsum.photos/302/200">
+      <div class="p-4">
+        <h3 class="font-bold">Responsive Strategies</h3>
+        <p>Build once, deploy everywhere</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="text-center mb-16">
+
+  <h2 class="text-2xl font-bold mb-4">Categories</h2>
+
+  <div class="flex flex-wrap gap-3 justify-center">
+
+    <span class="bg-blue-100 px-4 py-1 rounded-full">Design</span>
+    <span class="bg-green-100 px-4 py-1 rounded-full">Development</span>
+    <span class="bg-purple-100 px-4 py-1 rounded-full">Security</span>
+    <span class="bg-pink-100 px-4 py-1 rounded-full">AI</span>
+
+  </div>
+
+</section>
+
+<!-- ================= RECENT POSTS ================= -->
+<section class="container mx-auto mb-16">
+
+  <h2 class="text-2xl font-bold mb-6">Recent Posts</h2>
+
+  <ul class="space-y-3">
+
+    <li>Building responsive UIs — <span class="text-gray-500">Jan 5, 2025</span></li>
+    <li>Cybersecurity for developers — <span class="text-gray-500">Jan 3, 2025</span></li>
+    <li>CSS grids vs flexbox — <span class="text-gray-500">Dec 28, 2024</span></li>
+
+  </ul>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+<section class="bg-white py-10">
+
+  <div class="container mx-auto max-w-md text-center">
+
+    <h2 class="text-xl font-bold mb-4">Subscribe to our Newsletter</h2>
+
+    <form class="flex flex-col gap-3">
+
+      <input type="email"
+             class="border p-2 rounded"
+             placeholder="Your Email">
+
+      <button class="bg-blue-600 text-white py-2 rounded hover:bg-blue-500">
+        Subscribe
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-blue-600 text-white py-5 mt-10">
+
+  <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+
+    <p>© 2025 SkyBlog</p>
+
+    <div class="flex gap-3 text-xl">
+      <span>🌐</span>
+      <span>📧</span>
+      <span>📱</span>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
