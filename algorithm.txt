@@ -1,0 +1,40 @@
+ALGORITHM Sentence_Analysis
+
+VAR
+    ch : CHARACTER
+    length : INTEGER ← 0
+    words  : INTEGER ← 1     // Start with 1 word
+    vowels : INTEGER ← 0
+
+BEGIN
+
+    WRITE("Enter a sentence ending with a point '.'")
+
+    READ(ch)
+
+    WHILE ch ≠ '.' DO
+
+        // Count characters
+        length ← length + 1
+
+        // Count words
+        IF ch = ' ' THEN
+            words ← words + 1
+        END_IF
+
+        // Count vowels
+        IF ch = 'a' OR ch = 'e' OR ch = 'i' OR ch = 'o' OR ch = 'u'
+           OR ch = 'A' OR ch = 'E' OR ch = 'I' OR ch = 'O' OR ch = 'U' THEN
+            vowels ← vowels + 1
+        END_IF
+
+        // Read next character
+        READ(ch)
+
+    END_WHILE
+
+    WRITE("Sentence length = ", length)
+    WRITE("Number of words = ", words)
+    WRITE("Number of vowels = ", vowels)
+
+END
