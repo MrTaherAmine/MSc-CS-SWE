@@ -1,0 +1,1 @@
+I am already familiar with all the data structures and algorithms presented on VisualGo. Some advanced structures are more complex than others, particularly in implementation, but none were new to me conceptually.
