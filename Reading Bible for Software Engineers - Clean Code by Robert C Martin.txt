@@ -1,0 +1,49 @@
+Chapter 2: Meaningful Names (4 hours)
+
+Summary:
+This chapter stresses the importance of clear, descriptive, and unambiguous names for variables, functions, and classes. Names should communicate intent without requiring extra comments. Good naming conventions reduce confusion, improve readability, and facilitate collaboration among developers.
+
+Key Takeaways:
+- Use pronounceable and searchable names.
+- Avoid generic names like data or tmp.
+- Choose intention-revealing names (e.g., calculateInterest instead of doIt).
+- Minimize the need for explanatory comments by making names self-explanatory.
+
+-------------------------------------------------------------------------------------------------
+
+Chapter 3: Functions (4 hours)
+
+Summary:
+Functions should be small, focused, and perform a single task. Long functions often obscure logic and increase the risk of bugs. Emphasis is on clarity, simplicity, and modularity.
+
+Key Takeaways:
+- Functions should do one thing only.
+- Keep functions short (ideally under 20 lines).
+- Name functions clearly to describe their purpose.
+- Use function arguments sparingly and avoid side effects.
+- Split complex logic into smaller helper functions.
+
+-------------------------------------------------------------------------------------------------
+
+Chapter 4: Comments (4 hours)
+
+Summary:
+Comments are necessary in some cases, but should never compensate for poorly written code. Code should strive to be self-explanatory. Comments should provide clarification, intent, or context rather than reiterate obvious logic.
+
+Key Takeaways:
+- Prefer clear code over excessive comments.
+- Avoid redundant or misleading comments.
+- Use comments to explain why something is done, not what is done.
+- Remove outdated or commented-out code before committing.
+
+-------------------------------------------------------------------------------------------------
+
+Chapter 6: Objects and Data Structures (4 hours)
+Summary:
+This chapter explores the balance between objects (behavior) and data structures (state). Well-designed objects encapsulate data and provide behavior, while data structures expose their contents but have little logic. Understanding when to use each is key to maintainable and clean software.
+
+Key Takeaways:
+- Use objects to hide data and provide meaningful operations.
+- Use data structures when you need simple, transparent containers for data.
+- Avoid mixing behaviors in data structures unnecessarily.
+- Design interfaces to provide clarity and prevent misuse of the data.
