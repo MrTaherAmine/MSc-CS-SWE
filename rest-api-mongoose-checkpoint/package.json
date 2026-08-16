@@ -1,0 +1,16 @@
+{
+  "name": "rest-api-mongoose-checkpoint",
+  "version": "1.0.0",
+  "description": "REST API checkpoint using Node.js, Express, MongoDB and Mongoose",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Server.js",
+    "dev": "node --watch Server.js",
+    "check": "node --check Server.js && node --check config/db.js && node --check models/User.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.8.0"
+  }
+}
