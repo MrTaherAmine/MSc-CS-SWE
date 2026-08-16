@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 35%),
+    linear-gradient(135deg, #0f172a 0%, #111827 55%, #020617 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  color: white;
+  padding: 50px 18px 30px;
+}
+
+.page-shell {
+  max-width: 760px;
+}
+
+.hero {
+  margin-bottom: 36px;
+}
+
+.hero h1 {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.hero p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.control-card,
+.profile-card {
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.control-card {
+  background: rgba(255, 255, 255, 0.97);
+  color: #0f172a;
+}
+
+.timer-text {
+  color: #475569;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.98);
+  color: #0f172a;
+}
+
+.profile-image {
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  background: linear-gradient(135deg, #dbeafe, #e2e8f0);
+  padding: 24px;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.profile-bio {
+  color: #475569;
+  line-height: 1.7;
+}
+
+footer {
+  color: #94a3b8;
+}
