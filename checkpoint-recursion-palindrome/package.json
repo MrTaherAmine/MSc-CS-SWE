@@ -1,0 +1,10 @@
+{
+  "name": "checkpoint-recursion-palindrome",
+  "version": "1.0.0",
+  "description": "Recursive palindrome checker checkpoint",
+  "main": "src/palindrome.js",
+  "scripts": {
+    "start": "node src/palindrome.js",
+    "test": "node tests/palindrome.test.js"
+  }
+}
