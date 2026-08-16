@@ -1,0 +1,9 @@
+{
+  "name": "todo-rest-api-node-core",
+  "version": "1.0.0",
+  "description": "RESTful To-Do API built using only Node.js core modules",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
