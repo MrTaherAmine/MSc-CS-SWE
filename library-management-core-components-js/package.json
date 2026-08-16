@@ -1,0 +1,10 @@
+{
+  "name": "library-management-core-components-js",
+  "version": "1.0.0",
+  "description": "Core Library Management System components using ES modules and design patterns",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
