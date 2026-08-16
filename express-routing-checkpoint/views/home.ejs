@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %> | Express Checkpoint</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a href="/" class="brand">TAE Services</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services">Our Services</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <span class="eyebrow">Express Routing Checkpoint</span>
+      <h1>Welcome to TAE Services</h1>
+      <p>
+        A simple Express web application demonstrating routing, middleware,
+        working-hour access control, EJS templates, and CSS styling.
+      </p>
+
+      <a href="/services" class="cta">Explore Our Services</a>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Fast Routing</h2>
+        <p>Express routes handle the Home, Services, and Contact pages.</p>
+      </article>
+
+      <article class="card">
+        <h2>Custom Middleware</h2>
+        <p>The app is available only Monday to Friday from 09:00 to 17:00.</p>
+      </article>
+
+      <article class="card">
+        <h2>Reusable Styling</h2>
+        <p>All pages use the same responsive CSS file.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

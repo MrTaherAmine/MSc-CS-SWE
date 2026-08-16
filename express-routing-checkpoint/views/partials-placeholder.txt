@@ -1,0 +1,1 @@
+This checkpoint uses standalone EJS pages for simplicity.
