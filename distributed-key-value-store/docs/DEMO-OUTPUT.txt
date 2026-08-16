@@ -1,0 +1,207 @@
+
+========================================================================
+1. CREATE INITIAL CLUSTER
+========================================================================
+Nodes: node-A, node-B, node-C
+
+========================================================================
+2. STORE EXAMPLE DATA
+========================================================================
+user:101 -> node-C
+user:102 -> node-B
+user:103 -> node-C
+user:104 -> node-A
+user:105 -> node-B
+user:106 -> node-B
+
+Initial distribution:
+{
+  "node-A": {
+    "online": true,
+    "keys": [
+      "user:104"
+    ]
+  },
+  "node-B": {
+    "online": true,
+    "keys": [
+      "user:102",
+      "user:105",
+      "user:106"
+    ]
+  },
+  "node-C": {
+    "online": true,
+    "keys": [
+      "user:101",
+      "user:103"
+    ]
+  }
+}
+
+========================================================================
+3. TRANSPARENT READS + LRU CACHE
+========================================================================
+user:101 => { value: { name: [32m'Alice'[39m }, source: [32m'node:node-C'[39m }
+user:102 => { value: { name: [32m'Bob'[39m }, source: [32m'node:node-B'[39m }
+user:103 => { value: { name: [32m'Charlie'[39m }, source: [32m'node:node-C'[39m }
+
+Read user:101 again:
+user:101 => { value: { name: [32m'Alice'[39m }, source: [32m'cache'[39m }
+
+Cache contents:
+[
+  { key: [32m'user:102'[39m, value: { name: [32m'Bob'[39m } },
+  { key: [32m'user:103'[39m, value: { name: [32m'Charlie'[39m } },
+  { key: [32m'user:101'[39m, value: { name: [32m'Alice'[39m } }
+]
+
+========================================================================
+4. NODE JOIN + MINIMAL DATA MOVEMENT
+========================================================================
+{ action: [32m'join'[39m, nodeId: [32m'node-D'[39m, movedKeys: [33m2[39m }
+Keys whose owner changed: 2/6
+
+Distribution after node-D joins:
+{
+  "node-A": {
+    "online": true,
+    "keys": [
+      "user:104"
+    ]
+  },
+  "node-B": {
+    "online": true,
+    "keys": [
+      "user:102",
+      "user:106"
+    ]
+  },
+  "node-C": {
+    "online": true,
+    "keys": [
+      "user:101"
+    ]
+  },
+  "node-D": {
+    "online": true,
+    "keys": [
+      "user:105",
+      "user:103"
+    ]
+  }
+}
+
+========================================================================
+5. NODE LEAVE
+========================================================================
+Keys physically located on node-B before removal: [ [32m'user:102'[39m, [32m'user:106'[39m ]
+{ action: [32m'leave'[39m, nodeId: [32m'node-B'[39m, movedKeys: [33m6[39m }
+Keys whose owner changed after node-B left: 2/6
+
+Distribution after node-B leaves:
+{
+  "node-A": {
+    "online": true,
+    "keys": [
+      "user:104",
+      "user:102"
+    ]
+  },
+  "node-C": {
+    "online": true,
+    "keys": [
+      "user:101"
+    ]
+  },
+  "node-D": {
+    "online": true,
+    "keys": [
+      "user:106",
+      "user:105",
+      "user:103"
+    ]
+  }
+}
+
+========================================================================
+6. SIMULATE NODE FAILURE
+========================================================================
+user:104 is owned by node-A
+Failed node: node-A
+Read user:104 while its owner is offline: {
+  value: [90mundefined[39m,
+  source: [32m'unavailable'[39m,
+  message: [32m'Limited availability: owner node node-A is offline and "user:104" is not cached.'[39m
+}
+Read user:101 from another node: { value: { name: [32m'Alice'[39m }, source: [32m'node:node-C'[39m }
+
+Cluster state during failure:
+{
+  "node-A": {
+    "online": false,
+    "keys": [
+      "user:104",
+      "user:102"
+    ]
+  },
+  "node-C": {
+    "online": true,
+    "keys": [
+      "user:101"
+    ]
+  },
+  "node-D": {
+    "online": true,
+    "keys": [
+      "user:106",
+      "user:105",
+      "user:103"
+    ]
+  }
+}
+
+========================================================================
+7. RECOVER NODE
+========================================================================
+Recovered node: node-A
+user:104 => { value: { name: [32m'Diana'[39m }, source: [32m'node:node-A'[39m }
+
+========================================================================
+8. TRANSPARENCY
+========================================================================
+Application code uses store.put(), store.get(), and store.delete().
+It does not need to know which physical node stores each key.
+
+Example:
+store.get("user:105") => { value: { name: [32m'Eve'[39m }, source: [32m'node:node-D'[39m }
+
+========================================================================
+9. FINAL METRICS
+========================================================================
+{ cacheHits: [33m1[39m, cacheMisses: [33m7[39m, reads: [33m8[39m, writes: [33m6[39m, deletes: [33m0[39m }
+
+Final distribution:
+{
+  "node-A": {
+    "online": true,
+    "keys": [
+      "user:104",
+      "user:102"
+    ]
+  },
+  "node-C": {
+    "online": true,
+    "keys": [
+      "user:101"
+    ]
+  },
+  "node-D": {
+    "online": true,
+    "keys": [
+      "user:106",
+      "user:105",
+      "user:103"
+    ]
+  }
+}

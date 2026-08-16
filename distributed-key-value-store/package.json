@@ -1,0 +1,13 @@
+{
+  "name": "distributed-key-value-store",
+  "version": "1.0.0",
+  "description": "Distributed key-value store simulation with consistent hashing, LRU caching, node join/leave and failure handling",
+  "main": "src/demo.js",
+  "scripts": {
+    "start": "node src/demo.js",
+    "check": "node --check src/hash.js && node --check src/cache.js && node --check src/node.js && node --check src/store.js && node --check src/demo.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
