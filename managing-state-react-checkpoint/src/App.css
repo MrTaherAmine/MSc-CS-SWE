@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 28%),
+    linear-gradient(135deg, #020617 0%, #0f172a 55%, #111827 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  color: white;
+  padding: 48px 18px 30px;
+}
+
+.page-shell {
+  max-width: 900px;
+}
+
+.hero {
+  max-width: 760px;
+  margin: 0 auto 36px;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.form-panel,
+.filter-bar {
+  background: rgba(255, 255, 255, 0.97);
+  color: #0f172a;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.form-panel {
+  padding: 26px;
+  margin-bottom: 24px;
+}
+
+.form-panel h2 {
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.filter-bar {
+  padding: 18px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.task-list {
+  display: grid;
+  gap: 18px;
+}
+
+.task-card {
+  border: 0;
+  border-left: 6px solid;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.task-card.active {
+  border-left-color: #2563eb;
+}
+
+.task-card.completed {
+  border-left-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.task-title {
+  font-weight: 800;
+}
+
+.task-title.done,
+.task-description.done {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.task-description {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.task-date {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.empty-state p {
+  color: #94a3b8;
+}
+
+footer {
+  color: #94a3b8;
+  margin-top: 45px;
+}
+
+@media (max-width: 576px) {
+  .task-card-header {
+    flex-direction: column;
+  }
+
+  .filter-bar {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
