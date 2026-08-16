@@ -1,0 +1,14 @@
+{
+  "name": "cleankart-refactor-iterate",
+  "version": "1.0.0",
+  "description": "Iterative refactoring exercise for an online shopping cart",
+  "type": "module",
+  "scripts": {
+    "messy": "node iteration-0-messy/cart.js",
+    "clean": "node iteration-1-cleanup/cart.js",
+    "strategy": "node iteration-2-strategy/cart.js",
+    "patterns": "node iteration-3-observer-builder/cart.js",
+    "final": "node final/src/index.js",
+    "test": "node final/tests/cart.test.js"
+  }
+}

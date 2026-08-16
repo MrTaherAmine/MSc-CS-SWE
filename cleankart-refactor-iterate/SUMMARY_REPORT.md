@@ -1,0 +1,9 @@
+# CleanKart Refactoring Summary Report
+
+The original shopping cart was intentionally written as tightly coupled procedural code. It used vague names, global mutable state, repeated loops, large functions, and conditional discount logic. The first refactoring iteration focused on small, low-risk improvements: variables and methods were renamed, duplicated calculations were extracted, dead logic was removed, and presentation was separated from pricing calculations. This made the code easier to read without changing its behavior.
+
+The next iterations addressed structural problems through design patterns. The **Strategy Pattern** replaced discount-related `if` statements with separate discount classes. This follows the Open/Closed Principle because new discount policies can be introduced without modifying the cart itself. The **Observer Pattern** decoupled product price changes from customer notifications. A product now publishes a price-drop event while observers decide how to react. The **Builder Pattern** improved creation of Product objects by replacing long or rigid constructor usage with a fluent creation process.
+
+Clean code principles were applied through meaningful naming, small methods, single responsibilities, encapsulation, reduced duplication, and modular folders. The final `ShoppingCart` focuses on cart behavior, `Product` focuses on product state, strategies focus on discounts, observers focus on notifications, and the builder focuses on object construction.
+
+The project was refactored iteratively rather than rewritten in one step. Each stage remains runnable, and the final version includes automated assertions to verify cart totals and discount behavior. This approach reduces regression risk and mirrors an Agile-style cycle of refactor, test, introduce a pattern, and test again.
