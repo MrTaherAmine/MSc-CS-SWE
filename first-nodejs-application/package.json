@@ -1,0 +1,14 @@
+{
+  "name": "first-nodejs-application",
+  "version": "1.0.0",
+  "description": "Checkpoint demonstrating built-in, local, and third-party Node.js modules",
+  "main": "main.js",
+  "scripts": {
+    "read": "node readFile.js",
+    "report": "node main.js",
+    "email": "node emailSender.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
