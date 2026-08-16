@@ -1,0 +1,22 @@
+{
+  "name": "product-crud-sql-nosql",
+  "version": "1.0.0",
+  "description": "Product CRUD Challenge implemented with MongoDB/Mongoose and MySQL/mysql2",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "mongo": "cross-env DB_MODE=nosql node src/server.js",
+    "mysql": "cross-env DB_MODE=sql node src/server.js",
+    "check": "node --check src/server.js && node --check src/controllers/NoSQLcontroller.js && node --check src/controllers/SQLcontroller.js"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.9.1",
+    "mysql2": "^3.23.2"
+  }
+}
