@@ -1,0 +1,9 @@
+{
+  "name": "async-programming-js-checkpoint",
+  "version": "1.0.0",
+  "description": "Async/Await checkpoint covering iteration, awaiting calls, error handling, chaining, concurrency and parallel requests",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
