@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.2), transparent 32%),
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 28%),
+    linear-gradient(135deg, #020617 0%, #0f172a 55%, #111827 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  color: white;
+  padding: 48px 18px 30px;
+}
+
+.page-shell {
+  max-width: 850px;
+}
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.hero p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.add-task-panel,
+.filter-panel {
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.97);
+  color: #0f172a;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.add-task-panel {
+  margin-bottom: 24px;
+}
+
+.filter-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.filter-panel h2 {
+  margin: 0;
+  font-weight: 800;
+}
+
+.task-list {
+  display: grid;
+  gap: 16px;
+}
+
+.task-card {
+  border: 0;
+  border-left: 6px solid;
+  border-radius: 18px;
+}
+
+.task-active {
+  border-left-color: #6366f1;
+}
+
+.task-done {
+  border-left-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.task-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.task-id {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.task-description {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.completed-text {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 46px 20px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.empty-state p {
+  color: #94a3b8;
+}
+
+footer {
+  color: #94a3b8;
+  margin-top: 44px;
+}
+
+@media (max-width: 576px) {
+  .filter-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
