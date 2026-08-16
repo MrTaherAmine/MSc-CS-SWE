@@ -1,0 +1,9 @@
+{
+  "name": "smart-library-management-system",
+  "version": "1.0.0",
+  "description": "Object-Oriented Design checkpoint implementing a Smart Library Management System",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
