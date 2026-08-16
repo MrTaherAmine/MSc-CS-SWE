@@ -1,0 +1,7 @@
+# Reflection Report
+
+The main challenge during the refactor was deciding what should remain visible to the rest of the program and what should be hidden. In the procedural version, the cart array is global, so any part of the program can change it directly. That makes the code easy to start with, but it also makes the application harder to control as it grows. During the refactor, I moved the cart state into a closure and exposed only the operations that should be available publicly.
+
+I chose the **Module Pattern** because it solves one of the clearest weaknesses of the procedural version: global scope pollution. The refactored solution keeps the cart private while still providing reusable methods such as `addItem`, `removeItem`, `clearCart`, `viewCart`, and `calculateTotal`. This improves maintainability because the internal representation of the cart can change later without forcing other parts of the application to change. It also improves reliability because external code cannot directly overwrite the cart array.
+
+I would choose procedural programming for very small scripts, prototypes, or simple exercises where the logic is limited and unlikely to grow. I would choose a design pattern when the application becomes larger, when multiple parts of the system depend on the same behavior, or when maintainability, reuse, encapsulation, and future extension become important. Design patterns provide a clearer structure and make responsibilities easier to understand.
