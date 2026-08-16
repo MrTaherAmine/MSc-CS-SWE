@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430">
+<rect width="720" height="430" fill="#0f172a"/>
+<rect x="110" y="70" width="500" height="290" rx="24" fill="#f8fafc"/>
+<rect x="160" y="125" width="34" height="34" rx="6" fill="#16a34a"/>
+<path d="M168 141l8 8 14-18" stroke="white" stroke-width="5" fill="none"/>
+<rect x="220" y="130" width="300" height="18" rx="9" fill="#cbd5e1"/>
+<rect x="160" y="195" width="34" height="34" rx="6" fill="#2563eb"/>
+<rect x="220" y="200" width="250" height="18" rx="9" fill="#cbd5e1"/>
+<text x="360" y="315" text-anchor="middle" fill="#0f172a" font-size="42" font-family="Arial" font-weight="700">TaskFlow</text>
+</svg>

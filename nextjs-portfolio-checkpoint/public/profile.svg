@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="840" viewBox="0 0 840 840">
+<rect width="840" height="840" rx="110" fill="#0f172a"/>
+<circle cx="420" cy="310" r="150" fill="#2563eb"/>
+<circle cx="420" cy="275" r="92" fill="#dbeafe"/>
+<path d="M205 700c24-166 116-250 215-250s191 84 215 250" fill="#1d4ed8"/>
+<text x="420" y="790" text-anchor="middle" fill="#93c5fd" font-size="54" font-family="Arial" font-weight="700">TAE</text>
+</svg>

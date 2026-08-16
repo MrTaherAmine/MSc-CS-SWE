@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430">
+<rect width="720" height="430" fill="#111827"/>
+<rect x="70" y="70" width="580" height="290" rx="28" fill="#1f2937"/>
+<circle cx="225" cy="215" r="72" fill="#dc2626"/>
+<polygon points="205,170 205,260 275,215" fill="white"/>
+<text x="410" y="205" fill="#f8fafc" font-size="44" font-family="Arial" font-weight="700">MovieVerse</text>
+<text x="410" y="250" fill="#94a3b8" font-size="24" font-family="Arial">React Movie App</text>
+</svg>

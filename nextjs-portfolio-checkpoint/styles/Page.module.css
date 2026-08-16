@@ -1,0 +1,114 @@
+.pageHeader {
+  max-width: 850px;
+  margin-bottom: 42px;
+}
+
+.pageHeader > span,
+.projectBody > span {
+  color: #60a5fa;
+  font-weight: 800;
+}
+
+.pageHeader h1 {
+  margin: 10px 0 18px;
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.pageHeader p {
+  color: #cbd5e1;
+  line-height: 1.75;
+  font-size: 1.08rem;
+}
+
+.twoColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.panel,
+.contactForm {
+  border-radius: 20px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #0f172a;
+}
+
+.panel ul {
+  line-height: 1.9;
+}
+
+.panel p {
+  line-height: 1.8;
+  color: #475569;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.projectCard {
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.97);
+  color: #0f172a;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.projectBody {
+  padding: 22px;
+}
+
+.projectBody h2 {
+  margin: 8px 0;
+}
+
+.projectBody p {
+  color: #475569;
+  line-height: 1.65;
+}
+
+.contactForm {
+  max-width: 720px;
+  display: grid;
+  gap: 18px;
+}
+
+.contactForm label {
+  display: grid;
+  gap: 7px;
+  font-weight: 800;
+}
+
+.contactForm input,
+.contactForm textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.contactForm button {
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 18px;
+  background: #2563eb;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .twoColumn,
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+}

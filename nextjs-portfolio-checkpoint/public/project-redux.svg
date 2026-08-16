@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430">
+<rect width="720" height="430" fill="#0f172a"/>
+<circle cx="360" cy="215" r="125" fill="#7c3aed"/>
+<circle cx="360" cy="215" r="52" fill="#ede9fe"/>
+<circle cx="360" cy="120" r="20" fill="#ede9fe"/>
+<circle cx="278" cy="262" r="20" fill="#ede9fe"/>
+<circle cx="442" cy="262" r="20" fill="#ede9fe"/>
+<path d="M360 140C300 160 300 230 294 244M360 140c60 20 60 90 66 104M296 265c38 32 90 32 128 0" stroke="#ede9fe" stroke-width="10" fill="none"/>
+<text x="360" y="390" text-anchor="middle" fill="#c4b5fd" font-size="42" font-family="Arial" font-weight="700">Redux Todo</text>
+</svg>
