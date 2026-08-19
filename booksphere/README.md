@@ -1,42 +1,31 @@
 # BookSphere — Social Book Recommendation Platform
 
-BookSphere is a full-stack social book discovery and recommendation platform developed through the GOMYCODE Lab Phase.
+BookSphere is a full-stack social book discovery and recommendation platform being developed through the GOMYCODE Lab Phase.
 
 ## Current Status
 
-**Phase 1/7 — Project Setup and Database Configuration**
+**Phase 2/7 — User Authentication and Authorization**
 
-Phase 1 establishes:
+### Phase 1 completed
+- React/Vite frontend
+- Node.js/Express backend
+- MongoDB/Mongoose configuration
+- User, Book, and Recommendation schemas
+- recommendation API foundation
 
-- npm project structure;
-- React frontend;
-- Node.js + Express backend;
-- MongoDB + Mongoose configuration;
-- environment-variable management;
-- initial User, Book, and Recommendation schemas;
-- recommendation API foundation;
-- health check endpoint.
+### Phase 2 completed
+- user registration
+- user login
+- bcrypt password hashing
+- JWT session management
+- HTTP-only authentication cookie
+- backend authentication middleware
+- frontend authentication context
+- protected dashboard route
+- authenticated recommendation creation
+- logout
 
-## Architecture
-
-```text
-Browser
-   |
-   v
-React + Vite client
-   |
-   | HTTP / JSON
-   v
-Node.js + Express API
-   |
-   v
-Mongoose
-   |
-   v
-MongoDB
-```
-
-## Installation
+## Run locally
 
 ```bash
 npm install
@@ -45,35 +34,70 @@ cp server/.env.example server/.env
 npm run dev
 ```
 
-Set `MONGODB_URI` inside `server/.env` to either a local MongoDB instance or a MongoDB Atlas connection string.
+Configure `server/.env`:
 
-Frontend: `http://localhost:5173`  
-Backend: `http://localhost:5000`  
-Health: `http://localhost:5000/api/health`
+```text
+MONGODB_URI=mongodb://127.0.0.1:27017/booksphere
+JWT_SECRET=replace-this-with-a-long-random-secret
+CLIENT_URL=http://localhost:5173
+```
 
-## Optional Seed Data
+Frontend: `http://localhost:5173`
+
+Backend: `http://localhost:5000`
+
+## Authentication API
+
+```text
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/me
+POST /api/auth/logout
+```
+
+Recommendation creation is now protected:
+
+```text
+POST /api/recommendations
+```
+
+## Optional demo data
 
 ```bash
 npm run seed --prefix server
 ```
 
-## Phase 1 API
+Demo account:
 
-```http
-GET /api/health
-GET /api/recommendations
-POST /api/recommendations
+```text
+demo@booksphere.local
+Demo1234!
 ```
 
-## Data Model
+Use the demo account only for local development.
 
-- **User**: profile foundation for Phase 2 authentication.
-- **Book**: book metadata and external-source identifiers.
-- **Recommendation**: user/book references, recommendation text, rating, tags, visibility, engagement counters, timestamps.
+## Security notes
 
-The same repository will be extended through the remaining Lab Phases.
+- plain-text passwords are never saved;
+- password hashes are excluded from normal User queries;
+- authentication uses signed JWTs;
+- browser sessions use an HTTP-only cookie;
+- protected routes validate the session before processing requests;
+- `.env` files and secrets are excluded from Git.
+
+## Phase documentation
+
+- `docs/PHASE_1_REPORT.md`
+- `docs/PHASE_1_CHECKLIST.md`
+- `docs/PHASE_2_REPORT.md`
+- `docs/PHASE_2_CHECKLIST.md`
+
+## Next
+
+**Phase 3/7 — Book Search and Recommendation**
 
 ## Author
 
-**Taher Amine ELHOUARI**  
+**Taher Amine ELHOUARI**
+
 GOMYCODE — 15-Month Software Engineering Program
