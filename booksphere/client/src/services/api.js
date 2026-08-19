@@ -22,6 +22,15 @@ async function apiRequest(path, options = {}) {
 export const getHealth = () => apiRequest('/health');
 export const getRecommendations = () => apiRequest('/recommendations');
 
+export const searchBooks = ({ query, type = 'all' }) => {
+  const params = new URLSearchParams({
+    q: query,
+    type
+  });
+
+  return apiRequest(`/books/search?${params.toString()}`);
+};
+
 export const registerUser = payload =>
   apiRequest('/auth/register', {
     method: 'POST',

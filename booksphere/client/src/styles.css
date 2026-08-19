@@ -113,3 +113,251 @@ button,input,select,textarea { font: inherit; }
   .panel { padding: 22px; }
   .dashboard-grid { grid-template-columns: 1fr; }
 }
+/* Phase 3 — Book Search and Recommendation */
+.search-intro {
+  max-width: 820px;
+  margin-bottom: 24px;
+}
+
+.search-intro h1 {
+  margin: 0;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+.search-intro > p:last-child {
+  color: #737a8c;
+  font-size: 17px;
+}
+
+.search-bar {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 10px;
+  padding: 14px;
+  background: white;
+  border: 1px solid #e7e0f4;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(59, 42, 111, .06);
+}
+
+.search-bar input,
+.search-bar select,
+.phase3-form input,
+.phase3-form select,
+.phase3-form textarea {
+  width: 100%;
+  padding: 12px 13px;
+  color: #191d2b;
+  background: #fff;
+  border: 1px solid #d9d4e5;
+  border-radius: 10px;
+  outline: none;
+}
+
+.search-button,
+.secondary-action {
+  padding: 11px 15px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.search-button {
+  color: white;
+  background: #7444ee;
+}
+
+.search-button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.search-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+}
+
+.search-meta span {
+  padding: 7px 9px;
+  color: #665a7d;
+  background: #ede8fa;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.book-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.book-result {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  gap: 18px;
+  min-height: 190px;
+  padding: 16px;
+  background: white;
+  border: 1px solid #e7e0f4;
+  border-radius: 16px;
+}
+
+.cover-shell {
+  display: grid;
+  place-items: center;
+  min-height: 158px;
+  overflow: hidden;
+  color: #8b839c;
+  background: #eeebf5;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.cover-shell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-result h2 {
+  margin: 2px 0 5px;
+  font-size: 21px;
+  line-height: 1.12;
+}
+
+.result-source {
+  margin: 0;
+  color: #7444ee;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.book-author {
+  margin: 0;
+  color: #737a8c;
+}
+
+.book-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 14px;
+}
+
+.book-facts span {
+  padding: 5px 7px;
+  color: #6f6681;
+  background: #f5f2fa;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.secondary-action {
+  color: #7444ee;
+  background: #eee8ff;
+}
+
+.phase3-form {
+  scroll-margin-top: 90px;
+  margin-top: 34px;
+  padding: 30px;
+  background: white;
+  border: 1px solid #e7e0f4;
+  border-radius: 20px;
+}
+
+.form-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+}
+
+.form-heading h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.form-heading > span {
+  max-width: 360px;
+  color: #737a8c;
+  text-align: right;
+  font-size: 13px;
+}
+
+.phase3-form label {
+  display: grid;
+  gap: 7px;
+  margin-top: 16px;
+  font-weight: 800;
+}
+
+.form-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.auth-warning {
+  margin-top: 18px;
+  padding: 12px 14px;
+  color: #805a16;
+  background: #fff7e6;
+  border-radius: 10px;
+}
+
+.phase3-submit {
+  width: auto;
+  min-width: 220px;
+}
+
+.primary-link {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 12px 14px;
+  color: white;
+  background: #7444ee;
+  border-radius: 10px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.dashboard-cta p:not(.eyebrow) {
+  color: #737a8c;
+}
+
+@media (max-width: 760px) {
+  .search-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .book-results {
+    grid-template-columns: 1fr;
+  }
+
+  .form-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .form-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .form-heading > span {
+    text-align: left;
+  }
+
+  .book-result {
+    grid-template-columns: 92px 1fr;
+  }
+}

@@ -16,6 +16,7 @@ export default function SiteHeader() {
 
       <nav>
         <NavLink to="/">Discover</NavLink>
+        <NavLink to="/search">Search</NavLink>
 
         {authenticated ? (
           <>

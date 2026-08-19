@@ -26,7 +26,8 @@ async function seed() {
     source: 'manual',
     title: 'Clean Code',
     authors: ['Robert C. Martin'],
-    description: 'A practical book about writing maintainable software.',
+    description:
+      'A practical software engineering book about writing readable and maintainable code.',
     genres: ['Software Engineering', 'Programming']
   });
 
@@ -39,7 +40,7 @@ async function seed() {
     tags: ['software-engineering', 'clean-code']
   });
 
-  console.log('✅ Phase 2 seed data created');
+  console.log('✅ Phase 3 seed data created');
   console.log('Demo login: demo@booksphere.local / Demo1234!');
 
   await mongoose.disconnect();

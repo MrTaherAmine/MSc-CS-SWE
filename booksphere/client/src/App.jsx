@@ -11,6 +11,7 @@ import DashboardPage from './pages/DashboardPage.jsx';
 import HomePage from './pages/HomePage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
+import SearchPage from './pages/SearchPage.jsx';
 import './styles.css';
 
 function GuestOnly({ children }) {
@@ -31,6 +32,8 @@ function AppRoutes() {
       <main className="page">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+
           <Route
             path="/login"
             element={
@@ -39,6 +42,7 @@ function AppRoutes() {
               </GuestOnly>
             }
           />
+
           <Route
             path="/register"
             element={
@@ -47,6 +51,7 @@ function AppRoutes() {
               </GuestOnly>
             }
           />
+
           <Route
             path="/dashboard"
             element={
@@ -55,6 +60,7 @@ function AppRoutes() {
               </ProtectedRoute>
             }
           />
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

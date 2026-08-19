@@ -3,6 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import mongoose from 'mongoose';
 import authRoutes from './routes/authRoutes.js';
+import bookRoutes from './routes/bookRoutes.js';
 import recommendationRoutes from './routes/recommendationRoutes.js';
 
 const app = express();
@@ -28,6 +29,7 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/books', bookRoutes);
 app.use('/api/recommendations', recommendationRoutes);
 
 app.use((req, res) => {
