@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>StudyScore</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">Git • CI • QA Learning Project</p>
+    <h1>StudyScore</h1>
+    <p>Enter test scores separated by commas to calculate an average and letter grade.</p>
+
+    <form id="score-form">
+      <label for="scores">Scores</label>
+      <input id="scores" placeholder="e.g. 75, 88, 92" required>
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result" class="result" aria-live="polite"></div>
+  </main>
+
+  <script type="module" src="../src/app.js"></script>
+</body>
+</html>
