@@ -1,0 +1,36 @@
+{
+  "users": {
+    "requiredFields": [
+      "_id",
+      "email",
+      "name",
+      "createdAt"
+    ],
+    "notes": "User profile with embedded addresses."
+  },
+  "products": {
+    "requiredFields": [
+      "_id",
+      "sku",
+      "slug",
+      "name",
+      "category",
+      "price",
+      "inventory",
+      "active"
+    ],
+    "notes": "Flexible product document optimized for browse/search."
+  },
+  "orders": {
+    "requiredFields": [
+      "_id",
+      "orderId",
+      "customer",
+      "items",
+      "totals",
+      "delivery",
+      "createdAt"
+    ],
+    "notes": "Order document embeds purchase-time snapshots."
+  }
+}

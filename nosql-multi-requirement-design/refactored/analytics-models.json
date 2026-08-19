@@ -1,0 +1,31 @@
+{
+  "daily_product_sales": {
+    "_id": {
+      "date": "YYYY-MM-DD",
+      "productId": "ObjectId"
+    },
+    "fields": [
+      "sku",
+      "productName",
+      "categoryId",
+      "unitsSold",
+      "grossRevenue",
+      "orderCount",
+      "averageUnitPrice",
+      "updatedAt"
+    ]
+  },
+  "daily_category_sales": {
+    "_id": {
+      "date": "YYYY-MM-DD",
+      "categoryId": "string"
+    },
+    "fields": [
+      "unitsSold",
+      "grossRevenue",
+      "orderCount",
+      "topProducts",
+      "updatedAt"
+    ]
+  }
+}
