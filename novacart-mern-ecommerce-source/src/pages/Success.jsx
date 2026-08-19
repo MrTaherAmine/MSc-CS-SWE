@@ -1,0 +1,2 @@
+import { Link, useLocation } from 'react-router-dom';
+export default function Success(){const {state}=useLocation();return <main className="shell success"><div className="check">✓</div><div className="kicker">ORDER CONFIRMED</div><h1>Thank you for your order.</h1><p>Your reference is <strong>{state?.order?._id||'DEMO-ORDER'}</strong>. This project demonstrates the complete storefront-to-order flow.</p><Link className="primary" to="/">Back to shop</Link></main>}

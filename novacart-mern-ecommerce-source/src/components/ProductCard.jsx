@@ -1,0 +1,3 @@
+import { Link } from 'react-router-dom';
+import { useStore } from '../context/StoreContext';
+export default function ProductCard({p}){ const {addToCart}=useStore(); return <article className="product-card"><Link to={`/product/${p._id}`} className="image-wrap"><img src={p.image} alt={p.name}/><span>{p.category}</span></Link><div className="product-body"><div className="eyebrow">★ {p.rating} · {p.stock} in stock</div><Link to={`/product/${p._id}`}><h3>{p.name}</h3></Link><p>{p.description}</p><div className="product-bottom"><strong>${p.price}</strong><button onClick={()=>addToCart(p)}>Add to cart</button></div></div></article> }
