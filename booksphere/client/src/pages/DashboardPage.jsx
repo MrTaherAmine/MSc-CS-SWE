@@ -26,11 +26,12 @@ export default function DashboardPage() {
         </article>
 
         <article className="recommendation-form dashboard-cta">
-          <p className="eyebrow purple">Phase 3</p>
+          <p className="eyebrow purple">Phase 4</p>
           <h2>Find your next recommendation</h2>
           <p>
             Search by title, author, or genre. Select a book, add its
-            description and your rating, then publish it to BookSphere.
+            description and recommendation, then open its details page to add
+            or update your community rating.
           </p>
           <Link className="primary-link" to="/search">
             Search and recommend books

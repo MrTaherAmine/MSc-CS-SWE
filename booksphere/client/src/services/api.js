@@ -31,6 +31,15 @@ export const searchBooks = ({ query, type = 'all' }) => {
   return apiRequest(`/books/search?${params.toString()}`);
 };
 
+export const getBookDetails = (bookId, options = {}) =>
+  apiRequest(`/books/${bookId}`, options);
+
+export const rateBook = (bookId, rating) =>
+  apiRequest(`/books/${bookId}/rating`, {
+    method: 'PUT',
+    body: JSON.stringify({ rating })
+  });
+
 export const registerUser = payload =>
   apiRequest('/auth/register', {
     method: 'POST',

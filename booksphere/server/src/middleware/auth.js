@@ -18,11 +18,15 @@ function readToken(req) {
   return null;
 }
 
-export async function requireAuth(req, res, next) {
+async function authenticate(req, res, next, required) {
   try {
     const token = readToken(req);
 
     if (!token) {
+      if (!required) {
+        return next();
+      }
+
       return res.status(401).json({
         success: false,
         message: 'Authentication required.'
@@ -39,6 +43,10 @@ export async function requireAuth(req, res, next) {
     const user = await User.findById(payload.sub);
 
     if (!user) {
+      if (!required) {
+        return next();
+      }
+
       return res.status(401).json({
         success: false,
         message: 'Authentication session is no longer valid.'
@@ -52,6 +60,10 @@ export async function requireAuth(req, res, next) {
       error.name === 'JsonWebTokenError' ||
       error.name === 'TokenExpiredError'
     ) {
+      if (!required) {
+        return next();
+      }
+
       return res.status(401).json({
         success: false,
         message: 'Authentication session is invalid or expired.'
@@ -60,6 +72,14 @@ export async function requireAuth(req, res, next) {
 
     next(error);
   }
+}
+
+export function requireAuth(req, res, next) {
+  return authenticate(req, res, next, true);
+}
+
+export function optionalAuth(req, res, next) {
+  return authenticate(req, res, next, false);
 }
 
 export function requireRole(...roles) {

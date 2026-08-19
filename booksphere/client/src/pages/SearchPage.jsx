@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import {
   createRecommendation,
@@ -34,14 +35,14 @@ export default function SearchPage() {
 
   const [form, setForm] = useState(EMPTY_FORM);
   const [formStatus, setFormStatus] = useState('');
+  const [savedBookId, setSavedBookId] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  const selectedLabel = useMemo(() => {
-    if (!form.title) return 'No book selected';
-    return form.author
+  const selectedLabel = !form.title
+    ? 'No book selected'
+    : form.author
       ? `${form.title} — ${form.author}`
       : form.title;
-  }, [form.title, form.author]);
 
   async function runSearch(event) {
     event.preventDefault();
@@ -82,6 +83,7 @@ export default function SearchPage() {
     });
 
     setFormStatus('');
+    setSavedBookId('');
     document
       .getElementById('recommend-form')
       ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -99,7 +101,7 @@ export default function SearchPage() {
     setSubmitting(true);
 
     try {
-      await createRecommendation({
+      const response = await createRecommendation({
         book: {
           externalId: form.externalId || undefined,
           source: form.source || 'manual',
@@ -117,6 +119,7 @@ export default function SearchPage() {
       });
 
       setFormStatus('Recommendation added successfully.');
+      setSavedBookId(response.data.book?._id || '');
       setForm(EMPTY_FORM);
     } catch (error) {
       setFormStatus(error.message);
@@ -323,6 +326,11 @@ export default function SearchPage() {
         </button>
 
         {formStatus && <p className="form-status">{formStatus}</p>}
+        {savedBookId ? (
+          <Link className="details-success-link" to={`/books/${savedBookId}`}>
+            Open the book details and rating page →
+          </Link>
+        ) : null}
       </form>
     </section>
   );

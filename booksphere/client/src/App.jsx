@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import SiteHeader from './components/SiteHeader.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
+import BookDetailsPage from './pages/BookDetailsPage.jsx';
 import HomePage from './pages/HomePage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
@@ -33,6 +34,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/books/:bookId" element={<BookDetailsPage />} />
 
           <Route
             path="/login"

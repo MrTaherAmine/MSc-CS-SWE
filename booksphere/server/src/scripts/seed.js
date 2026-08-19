@@ -4,12 +4,14 @@ import mongoose from 'mongoose';
 import { connectDatabase } from '../config/db.js';
 import Book from '../models/Book.js';
 import Recommendation from '../models/Recommendation.js';
+import Rating from '../models/Rating.js';
 import User from '../models/User.js';
 
 async function seed() {
   await connectDatabase();
 
   await Recommendation.deleteMany({});
+  await Rating.deleteMany({});
   await Book.deleteMany({});
   await User.deleteMany({ email: 'demo@booksphere.local' });
 
@@ -40,7 +42,17 @@ async function seed() {
     tags: ['software-engineering', 'clean-code']
   });
 
-  console.log('✅ Phase 3 seed data created');
+  await Rating.create({
+    user: user._id,
+    book: book._id,
+    value: 5
+  });
+
+  book.averageRating = 5;
+  book.ratingsCount = 1;
+  await book.save();
+
+  console.log('✅ Phase 4 seed data created');
   console.log('Demo login: demo@booksphere.local / Demo1234!');
 
   await mongoose.disconnect();

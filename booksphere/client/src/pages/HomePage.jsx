@@ -68,6 +68,11 @@ export default function HomePage() {
               <p>{item.book?.authors?.join(', ') || 'Unknown author'}</p>
               <blockquote>{item.recommendationText}</blockquote>
               <small>Recommended by {item.user?.name || 'BookSphere reader'}</small>
+              {item.book?._id ? (
+                <Link className="card-link" to={`/books/${item.book._id}`}>
+                  View details and ratings →
+                </Link>
+              ) : null}
             </article>
           ))}
         </div>

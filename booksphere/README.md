@@ -4,7 +4,7 @@ BookSphere is a full-stack social book discovery and recommendation platform bei
 
 ## Current Status
 
-**Phase 3/7 — Book Search and Recommendation**
+**Phase 4/7 — Book Details and Rating System**
 
 ### Phase 1 — Foundation
 - React/Vite frontend
@@ -31,6 +31,16 @@ BookSphere is a full-stack social book discovery and recommendation platform bei
 - title/author/description/rating validation
 - MongoDB persistence
 - authenticated recommendation ownership
+
+### Phase 4 — Details and Ratings
+- database-backed book details page
+- complete title, author, description, cover, publication, ISBN, and genre display
+- accessible interactive 1–5 star rating control
+- one rating per authenticated user and book
+- existing-rating updates through an idempotent `PUT` endpoint
+- live average rating, rating count, and 1–5 star distribution
+- public reader recommendations displayed with each book
+- direct details links from the community feed and recommendation workflow
 
 ## External Book API
 
@@ -77,18 +87,23 @@ Backend:
 http://localhost:5000
 ```
 
-## Phase 3 Workflow
+Verify the project:
 
-1. Open `/search`.
-2. Choose `All`, `Title`, `Author`, or `Genre`.
-3. Search Open Library.
-4. Choose **Recommend this book**.
-5. Complete the description, rating, and recommendation note.
-6. Submit while logged in.
-7. The server stores the book and recommendation in MongoDB.
-8. The recommendation is associated with the authenticated user.
+```bash
+npm test
+npm run build
+```
 
-## Phase 3 API
+## Phase 4 Workflow
+
+1. Open a stored book from **Recent Recommendations**, or submit a new recommendation from `/search`.
+2. BookSphere opens `/books/:bookId` and retrieves the book from MongoDB.
+3. The page displays complete book metadata, recommendations, and rating statistics.
+4. A logged-in reader selects 1–5 stars and saves the rating.
+5. The backend creates the reader's first rating or updates the existing one.
+6. The average, total count, and rating distribution refresh immediately.
+
+## Phase 4 API
 
 ### Search books
 
@@ -104,6 +119,27 @@ POST /api/recommendations
 
 The recommendation endpoint remains authenticated.
 
+### Retrieve book details and rating statistics
+
+```http
+GET /api/books/:bookId
+```
+
+The details endpoint is public. When a valid login cookie is present, the
+response also includes that reader's current rating.
+
+### Add or update a rating
+
+```http
+PUT /api/books/:bookId/rating
+Content-Type: application/json
+
+{ "rating": 5 }
+```
+
+The rating endpoint is authenticated and accepts whole numbers from 1 to 5.
+The unique `(user, book)` database index prevents duplicate ratings.
+
 ## Documentation
 
 ```text
@@ -114,11 +150,13 @@ docs/PHASE_2_CHECKLIST.md
 docs/PHASE_3_API_RESEARCH.md
 docs/PHASE_3_REPORT.md
 docs/PHASE_3_CHECKLIST.md
+docs/PHASE_4_REPORT.md
+docs/PHASE_4_CHECKLIST.md
 ```
 
 ## Next
 
-**Phase 4/7 — Book Details and Rating System**
+**Phase 5/7 — Social Interaction and User Profiles**
 
 ## Author
 
