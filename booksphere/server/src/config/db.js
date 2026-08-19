@@ -8,6 +8,11 @@ export async function connectDatabase() {
   mongoose.connection.on('error', error => console.error('❌ MongoDB error:', error.message));
   mongoose.connection.on('disconnected', () => console.warn('⚠️ MongoDB disconnected'));
 
-  await mongoose.connect(uri, { serverSelectionTimeoutMS: 5000 });
+  await mongoose.connect(uri, {
+    serverSelectionTimeoutMS: 10000,
+    maxPoolSize: 10,
+    minPoolSize: 0,
+    maxIdleTimeMS: 30000
+  });
   return mongoose.connection;
 }

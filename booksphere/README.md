@@ -1,10 +1,10 @@
 # BookSphere — Social Book Recommendation Platform
 
-BookSphere is a full-stack social book discovery and recommendation platform being developed through the GOMYCODE Lab Phase.
+BookSphere is a production-ready full-stack social book discovery and recommendation platform developed through the GOMYCODE Lab Phase.
 
 ## Current Status
 
-**Phase 6/7 — User Interface and Styling**
+**Phase 7/7 — Deployment (final phase)**
 
 ### Phase 1 — Foundation
 - React/Vite frontend
@@ -64,6 +64,16 @@ BookSphere is a full-stack social book discovery and recommendation platform bei
 - touch-friendly controls and reduced-motion support
 - consistent footer, branded surfaces, typography, buttons, forms, and book cards
 
+### Phase 7 — Deployment
+- Render Blueprint for a repeatable full-stack deployment
+- MongoDB Atlas production database integration through a protected secret
+- Express production server for both the API and compiled React single-page app
+- same-origin API requests and secure production cookies
+- health endpoint, graceful shutdown, proxy awareness, security headers, and asset caching
+- GitHub Actions test/build/deployment validation gate
+- automatic Render deployment only after required CI checks pass
+- repeatable production verification script covering configuration, API health, SPA routing, and headers
+
 ## External Book API
 
 BookSphere uses Open Library:
@@ -114,7 +124,33 @@ Verify the project:
 ```bash
 npm test
 npm run build
+npm run check:deployment
 ```
+
+Or run the complete Phase 7 gate:
+
+```bash
+npm run verify:deployment
+```
+
+## Deploy to Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/MrTaherAmine/booksphere)
+
+BookSphere uses one Render web service to host both the Express API and the
+compiled React application. MongoDB Atlas provides the production database.
+
+1. Push the `main` branch to the public GitHub repository.
+2. Create a MongoDB Atlas cluster, database user, and network access entry.
+3. Click **Deploy to Render** and connect the GitHub repository.
+4. Paste the Atlas driver connection string when Render requests `MONGODB_URI`.
+5. Render generates `JWT_SECRET`, builds the client, starts the server, and checks
+   `/api/health` automatically.
+6. Open the assigned `onrender.com` URL and complete the production smoke test in
+   `docs/PHASE_7_DEPLOYMENT_GUIDE.md`.
+
+Never commit the Atlas URI or JWT secret. They belong in Render's encrypted
+environment-variable settings.
 
 ## Phase 6 Interface Review
 
@@ -203,11 +239,15 @@ docs/PHASE_5_RECOMMENDATION_ALGORITHM.md
 docs/PHASE_6_REPORT.md
 docs/PHASE_6_CHECKLIST.md
 docs/PHASE_6_USABILITY_TEST.md
+docs/PHASE_7_REPORT.md
+docs/PHASE_7_CHECKLIST.md
+docs/PHASE_7_DEPLOYMENT_GUIDE.md
 ```
 
-## Next
+## Project Status
 
-**Phase 7/7 — Awaiting the final GOMYCODE phase brief**
+All seven development phases are implemented. Production provisioning requires
+the repository owner's GitHub/Render authorization and MongoDB Atlas URI.
 
 ## Author
 

@@ -8,10 +8,16 @@
     "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "server": "npm run dev --prefix server",
     "client": "npm run dev --prefix client",
+    "start": "npm start --prefix server",
     "build": "npm run build --prefix client",
-    "test": "npm test --prefix server"
+    "test": "npm test --prefix server",
+    "check:deployment": "node scripts/verify-deployment.mjs",
+    "verify:deployment": "npm test && npm run build && npm run check:deployment"
   },
   "devDependencies": {
     "concurrently": "^10.0.4"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

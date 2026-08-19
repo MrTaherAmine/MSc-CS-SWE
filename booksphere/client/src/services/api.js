@@ -1,4 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Production uses the Express server on the same origin. During local
+// development, Vite proxies /api requests to the backend on port 5000.
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 async function apiRequest(path, options = {}) {
   const response = await fetch(`${API_URL}${path}`, {
