@@ -6,8 +6,8 @@
 
 **GOMYCODE (GMC) × Woolf**
 
-[![Academic Work](https://img.shields.io/badge/Academic_Work-Completed-16a34a?style=for-the-badge)](#current-academic-status)
-[![Final Review](https://img.shields.io/badge/Final_Lab_Review-Pending-f59e0b?style=for-the-badge)](#current-academic-status)
+[![Program](https://img.shields.io/badge/Software_Engineering_Program-Certified-16a34a?style=for-the-badge)](https://diploma.gomycode.app/?id=31787166122436793)
+[![Final Lab](https://img.shields.io/badge/Final_Lab-Validated-16a34a?style=for-the-badge)](#current-academic-status)
 [![Portfolio](https://img.shields.io/badge/Project_Directories-55-2563eb?style=for-the-badge)](#portfolio-at-a-glance)
 [![Capstone](https://img.shields.io/badge/BookSphere-7%2F7_Phases-7c3aed?style=for-the-badge)](#flagship-lab-project--booksphere)
 
@@ -17,7 +17,7 @@
   systems, software quality, CI/CD, security, and production deployment.
 </p>
 
-[Explore Projects](#featured-projects) · [View Learning Map](#learning-map) · [Open BookSphere](./booksphere) · [Visit My Website](https://taheramine.org)
+[Explore Projects](#featured-projects) · [View Learning Map](#learning-map) · [Open BookSphere](./booksphere) · [View Certificate](./credentials/GOMYCODE-15-Month-Software-Engineering-Certificate-Taher-Amine-ELHOUARI.pdf) · [Verify Online](https://diploma.gomycode.app/?id=31787166122436793) · [Visit My Website](https://taheramine.org)
 
 </div>
 
@@ -25,15 +25,18 @@
 
 ## Current Academic Status
 
-> **All coursework, checkpoints, exercises, reports, and major projects have been completed.** All prior submissions have been instructor-validated; only the final **BookSphere Lab Phase project** currently awaits review. Formal degree completion remains subject to that final validation and institutional processing.
+> **The complete academic workload has been completed and instructor-validated, including all seven BookSphere lab phases.** I graduated from the GOMYCODE **15-Month Software Engineering Program** on **19 August 2026** and received the official Certificate of Completion. Formal conferment and issuance of the MSc credential remain subject to Woolf's institutional process.
 
 | Area | Status |
 | --- | --- |
-| Coursework and learning units | ✅ Completed |
+| Coursework and learning units | ✅ Completed and validated |
 | Checkpoints and technical exercises | ✅ Completed and validated |
-| Major software engineering projects | ✅ Completed |
-| BookSphere Lab Phase — 7/7 phases | 🟡 Submitted; final instructor validation pending |
-| Formal MSc completion | ⏳ Pending final academic processing |
+| Major software engineering projects | ✅ Completed and validated |
+| BookSphere Lab Phase — 7/7 phases | ✅ Completed and validated |
+| GOMYCODE 15-Month Software Engineering Program | 🎓 Graduated and certified — 19 August 2026 |
+| Certificate of Completion | [View the certificate PDF](./credentials/GOMYCODE-15-Month-Software-Engineering-Certificate-Taher-Amine-ELHOUARI.pdf) |
+| Public credential verification | [Verify the official certificate](https://diploma.gomycode.app/?id=31787166122436793) |
+| Formal MSc award and credential | ⏳ Woolf institutional processing |
 
 ---
 
@@ -265,8 +268,8 @@ and technology leadership.
 
 <div align="center">
 
-**Academic work completed · Final BookSphere lab validation pending**
+**GOMYCODE graduate — 19 August 2026 · BookSphere 7/7 validated**
 
-<sub>This repository is an academic and technical portfolio. Formal degree status is determined by the awarding institution after completion of all validation and administrative requirements.</sub>
+<sub>This repository is an academic and technical portfolio. Formal MSc award status and credential issuance are determined by Woolf through its institutional process.</sub>
 
 </div>
