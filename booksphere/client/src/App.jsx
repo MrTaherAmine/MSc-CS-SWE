@@ -13,6 +13,8 @@ import HomePage from './pages/HomePage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
 import SearchPage from './pages/SearchPage.jsx';
+import FeedPage from './pages/FeedPage.jsx';
+import ProfilePage from './pages/ProfilePage.jsx';
 import './styles.css';
 
 function GuestOnly({ children }) {
@@ -35,6 +37,7 @@ function AppRoutes() {
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/books/:bookId" element={<BookDetailsPage />} />
+          <Route path="/profiles/:userId" element={<ProfilePage />} />
 
           <Route
             path="/login"
@@ -59,6 +62,15 @@ function AppRoutes() {
             element={
               <ProtectedRoute>
                 <DashboardPage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/feed"
+            element={
+              <ProtectedRoute>
+                <FeedPage />
               </ProtectedRoute>
             }
           />

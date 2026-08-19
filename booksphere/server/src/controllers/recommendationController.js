@@ -1,18 +1,33 @@
 import Book from '../models/Book.js';
+import Like from '../models/Like.js';
 import Recommendation from '../models/Recommendation.js';
 
 export async function listRecommendations(req, res, next) {
   try {
+    const safeLimit = Math.min(Math.max(Number(req.query.limit) || 24, 1), 50);
     const recommendations = await Recommendation.find({ visibility: 'public' })
       .populate('book')
       .populate('user', 'name avatarUrl')
-      .sort({ createdAt: -1 })
-      .limit(50);
+      .sort({ createdAt: -1, _id: -1 })
+      .limit(safeLimit)
+      .lean();
+    const recommendationIds = recommendations.map(item => item._id);
+    const likes = req.user && recommendationIds.length
+      ? await Like.find({
+          user: req.user._id,
+          recommendation: { $in: recommendationIds }
+        }).select('recommendation').lean()
+      : [];
+    const likedIds = new Set(likes.map(item => String(item.recommendation)));
+    const data = recommendations.map(item => ({
+      ...item,
+      likedByMe: likedIds.has(String(item._id))
+    }));
 
     res.json({
       success: true,
-      count: recommendations.length,
-      data: recommendations
+      count: data.length,
+      data
     });
   } catch (error) {
     next(error);

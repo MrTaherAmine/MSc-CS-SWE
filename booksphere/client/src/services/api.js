@@ -64,3 +64,36 @@ export const createRecommendation = payload =>
     method: 'POST',
     body: JSON.stringify(payload)
   });
+
+export const getPersonalizedFeed = ({ cursor, limit = 12 } = {}, options = {}) => {
+  const params = new URLSearchParams({ limit: String(limit) });
+  if (cursor) params.set('cursor', cursor);
+  return apiRequest(`/feed?${params.toString()}`, options);
+};
+
+export const toggleRecommendationLike = recommendationId =>
+  apiRequest(`/recommendations/${recommendationId}/like`, { method: 'PUT' });
+
+export const getRecommendationComments = recommendationId =>
+  apiRequest(`/recommendations/${recommendationId}/comments`);
+
+export const addRecommendationComment = (recommendationId, body) =>
+  apiRequest(`/recommendations/${recommendationId}/comments`, {
+    method: 'POST',
+    body: JSON.stringify({ body })
+  });
+
+export const recordRecommendationShare = recommendationId =>
+  apiRequest(`/recommendations/${recommendationId}/share`, { method: 'POST' });
+
+export const getUserProfile = (userId, options = {}) =>
+  apiRequest(`/users/${userId}/profile`, options);
+
+export const toggleUserFollow = userId =>
+  apiRequest(`/users/${userId}/follow`, { method: 'PUT' });
+
+export const updateMyPreferences = payload =>
+  apiRequest('/users/me/preferences', {
+    method: 'PATCH',
+    body: JSON.stringify(payload)
+  });

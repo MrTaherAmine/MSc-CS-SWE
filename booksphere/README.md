@@ -4,7 +4,7 @@ BookSphere is a full-stack social book discovery and recommendation platform bei
 
 ## Current Status
 
-**Phase 4/7 — Book Details and Rating System**
+**Phase 5/7 — User Interaction and Recommendations Feed**
 
 ### Phase 1 — Foundation
 - React/Vite frontend
@@ -41,6 +41,18 @@ BookSphere is a full-stack social book discovery and recommendation platform bei
 - live average rating, rating count, and 1–5 star distribution
 - public reader recommendations displayed with each book
 - direct details links from the community feed and recommendation workflow
+
+### Phase 5 — Social Feed and Profiles
+- like/unlike recommendations with one like per user
+- add and retrieve recommendation comments
+- native device sharing with clipboard fallback and share counts
+- follow/unfollow reader relationships
+- public reader profiles with liked books, comments, followers, and statistics
+- self-service bio and favorite-genre preference editor
+- explainable personalized recommendation scoring
+- signals from favorite genres, liked/rated books, authors, followed readers, engagement, quality, and recency
+- protected **For You** feed with cursor pagination
+- indexed social collections, lean projections, capped queries, and on-demand comments
 
 ## External Book API
 
@@ -94,16 +106,17 @@ npm test
 npm run build
 ```
 
-## Phase 4 Workflow
+## Phase 5 Workflow
 
-1. Open a stored book from **Recent Recommendations**, or submit a new recommendation from `/search`.
-2. BookSphere opens `/books/:bookId` and retrieves the book from MongoDB.
-3. The page displays complete book metadata, recommendations, and rating statistics.
-4. A logged-in reader selects 1–5 stars and saves the rating.
-5. The backend creates the reader's first rating or updates the existing one.
-6. The average, total count, and rating distribution refresh immediately.
+1. Log in and open `/feed` from **For You**.
+2. BookSphere builds preference signals from favorite genres, likes, ratings, and follows.
+3. Public recommendations are scored and returned with a human-readable reason.
+4. Like, comment on, or share recommendations directly from the feed.
+5. Open a reader profile to review their liked books, comments, and followers.
+6. Follow the reader to strengthen their recommendations in future feed requests.
+7. Use cursor-based **Load more** retrieval without reloading the existing feed.
 
-## Phase 4 API
+## Phase 5 API
 
 ### Search books
 
@@ -140,6 +153,29 @@ Content-Type: application/json
 The rating endpoint is authenticated and accepts whole numbers from 1 to 5.
 The unique `(user, book)` database index prevents duplicate ratings.
 
+### Personalized recommendations feed
+
+```http
+GET /api/feed?limit=12&cursor=<optional-cursor>
+```
+
+### Recommendation interactions
+
+```http
+PUT  /api/recommendations/:recommendationId/like
+GET  /api/recommendations/:recommendationId/comments
+POST /api/recommendations/:recommendationId/comments
+POST /api/recommendations/:recommendationId/share
+```
+
+### Reader profiles and followers
+
+```http
+GET /api/users/:userId/profile
+PUT /api/users/:userId/follow
+PATCH /api/users/me/preferences
+```
+
 ## Documentation
 
 ```text
@@ -152,11 +188,14 @@ docs/PHASE_3_REPORT.md
 docs/PHASE_3_CHECKLIST.md
 docs/PHASE_4_REPORT.md
 docs/PHASE_4_CHECKLIST.md
+docs/PHASE_5_REPORT.md
+docs/PHASE_5_CHECKLIST.md
+docs/PHASE_5_RECOMMENDATION_ALGORITHM.md
 ```
 
 ## Next
 
-**Phase 5/7 — Social Interaction and User Profiles**
+**Phase 6/7 — Awaiting the next GOMYCODE phase brief**
 
 ## Author
 

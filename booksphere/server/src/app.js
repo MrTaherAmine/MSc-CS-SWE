@@ -5,6 +5,8 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/authRoutes.js';
 import bookRoutes from './routes/bookRoutes.js';
 import recommendationRoutes from './routes/recommendationRoutes.js';
+import feedRoutes from './routes/feedRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 
@@ -31,6 +33,8 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/recommendations', recommendationRoutes);
+app.use('/api/feed', feedRoutes);
+app.use('/api/users', userRoutes);
 
 app.use((req, res) => {
   res.status(404).json({

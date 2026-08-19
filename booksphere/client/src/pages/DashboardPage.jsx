@@ -26,16 +26,16 @@ export default function DashboardPage() {
         </article>
 
         <article className="recommendation-form dashboard-cta">
-          <p className="eyebrow purple">Phase 4</p>
-          <h2>Find your next recommendation</h2>
+          <p className="eyebrow purple">Phase 5</p>
+          <h2>Your personalized feed is ready</h2>
           <p>
-            Search by title, author, or genre. Select a book, add its
-            description and recommendation, then open its details page to add
-            or update your community rating.
+            Discover recommendations ranked using your preferences, ratings,
+            likes, followed readers, and community activity.
           </p>
-          <Link className="primary-link" to="/search">
-            Search and recommend books
-          </Link>
+          <div className="dashboard-links">
+            <Link className="primary-link" to="/feed">Open my personalized feed</Link>
+            <Link className="secondary-link" to={`/profiles/${user.id}`}>View my reader profile</Link>
+          </div>
         </article>
       </div>
     </section>

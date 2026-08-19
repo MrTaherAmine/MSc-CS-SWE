@@ -29,8 +29,8 @@ export default function HomePage() {
         </p>
 
         <div className="hero-actions">
-          <Link className="hero-primary" to={authenticated ? '/dashboard' : '/register'}>
-            {authenticated ? 'Open my library' : 'Join BookSphere'}
+          <Link className="hero-primary" to={authenticated ? '/feed' : '/register'}>
+            {authenticated ? 'Open my personal feed' : 'Join BookSphere'}
           </Link>
           {!authenticated && <Link className="hero-secondary" to="/login">Login</Link>}
         </div>
@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="status-row">
           <span>API: {health ? 'online' : error ? 'unavailable' : 'checking…'}</span>
           <span>MongoDB: {health?.database || 'checking…'}</span>
-          <span>Phase 2 authentication</span>
+          <span>Phase 5 social recommendations</span>
         </div>
       </section>
 

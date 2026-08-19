@@ -20,8 +20,9 @@ export default function SiteHeader() {
 
         {authenticated ? (
           <>
+            <NavLink to="/feed">For You</NavLink>
             <NavLink to="/dashboard">My Library</NavLink>
-            <span className="user-chip">{user.name}</span>
+            <NavLink className="user-chip" to={`/profiles/${user.id}`}>{user.name}</NavLink>
             <button className="text-button" onClick={handleLogout}>
               Logout
             </button>

@@ -8,12 +8,14 @@ const recommendationSchema = new mongoose.Schema({
   tags: { type: [String], default: [] },
   visibility: { type: String, enum: ['public', 'followers', 'private'], default: 'public', index: true },
   likesCount: { type: Number, min: 0, default: 0 },
-  commentsCount: { type: Number, min: 0, default: 0 }
+  commentsCount: { type: Number, min: 0, default: 0 },
+  sharesCount: { type: Number, min: 0, default: 0 }
 }, { timestamps: true });
 
 recommendationSchema.index({ createdAt: -1 });
 recommendationSchema.index({ user: 1, createdAt: -1 });
 recommendationSchema.index({ book: 1, createdAt: -1 });
 recommendationSchema.index({ visibility: 1, createdAt: -1 });
+recommendationSchema.index({ visibility: 1, createdAt: -1, _id: -1 });
 
 export default mongoose.model('Recommendation', recommendationSchema);
