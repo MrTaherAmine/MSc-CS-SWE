@@ -1,0 +1,21 @@
+{
+  "name": "slack-bot-master-highlight",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Educational Slack bot using Slack Bolt, Events API and slash commands.",
+  "type": "module",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node --watch bot.js",
+    "test": "node --test",
+    "check": "npm test"
+  },
+  "dependencies": {
+    "@slack/bolt": "^4.4.0",
+    "dotenv": "^16.4.7"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
