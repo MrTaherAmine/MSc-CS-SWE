@@ -1,0 +1,17 @@
+{
+  "name": "dom-benchmark-svelte",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@sveltejs/vite-plugin-svelte": "latest",
+    "vite": "latest",
+    "svelte": "5.42.1"
+  },
+  "devDependencies": {}
+}

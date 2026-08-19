@@ -1,0 +1,40 @@
+<main class="app">
+  <header>
+    <div><div class="eyebrow">Angular DOM Benchmark</div><h1>TodoBench</h1><div class="muted">Signals + @for + track task.id</div></div>
+    <button (click)="runBenchmark()" [disabled]="running()">{{ running() ? 'Benchmarking…' : 'Run benchmark' }}</button>
+  </header>
+
+  <form class="form-row" (submit)="$event.preventDefault(); addTask()">
+    <input [(ngModel)]="name" name="name" placeholder="Task name">
+    <select [(ngModel)]="priority" name="priority"><option>Low</option><option>Medium</option><option>High</option></select>
+    <button type="submit">Add task</button>
+    <button type="button" class="secondary" (click)="tasks.set(makeTasksForTemplate(100))">Load 100</button>
+    <button type="button" class="secondary" (click)="tasks.set([])">Clear</button>
+  </form>
+
+  @if (metrics(); as values) {
+    <section class="panel">
+      <div class="metrics">
+        @for (entry of metricEntries(values); track entry[0]) {
+          <div class="metric"><span>{{ entry[0] }}</span><strong>{{ entry[1].ms.toFixed(2) }} ms</strong><small>{{ entry[1].heapMB ?? 'n/a' }} MB heap</small></div>
+        }
+      </div>
+      <div class="toolbar"><button (click)="downloadResults()">Download JSON</button></div>
+    </section>
+  }
+
+  <section class="panel">
+    <strong>{{ tasks().length }} tasks</strong>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Task</th><th>Priority</th><th>Actions</th></tr></thead>
+      <tbody>
+        @for (task of tasks(); track task.id) {
+          <tr>
+            <td>{{ task.name }}</td><td class="priority">{{ task.priority }}</td>
+            <td><div class="task-actions"><button (click)="updateTask(task.id)">Edit</button><button (click)="removeTask(task.id)">Remove</button></div></td>
+          </tr>
+        }
+      </tbody>
+    </table></div>
+  </section>
+</main>

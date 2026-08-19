@@ -1,0 +1,14 @@
+:root{font-family:Inter,system-ui,sans-serif;color:#172033;background:#f3f6fa}
+*{box-sizing:border-box}body{margin:0}.app{max-width:1050px;margin:0 auto;padding:28px}
+header{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px}
+.eyebrow{font-size:12px;font-weight:900;letter-spacing:.12em;color:#2563eb;text-transform:uppercase}
+h1{margin:4px 0;font-size:40px}.muted{color:#667085}
+.toolbar,.form-row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+button,input,select{font:inherit;border-radius:9px;padding:10px 12px}
+input,select{border:1px solid #cfd7e5;background:white}button{border:0;background:#2563eb;color:white;font-weight:800;cursor:pointer}
+button.secondary{background:#e8eef8;color:#1d2939}.panel{background:white;border:1px solid #dde4ee;border-radius:16px;padding:18px;margin:18px 0}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #edf0f4;padding:10px}
+.task-actions{display:flex;gap:6px}.task-actions button{padding:6px 9px;font-size:12px}
+.priority{font-weight:800}.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.metric{background:#f8fafc;border:1px solid #e4e9f0;border-radius:10px;padding:12px}.metric strong{display:block;font-size:22px}
+@media(max-width:700px){header{align-items:flex-start;flex-direction:column}.table-wrap{overflow:auto}}
