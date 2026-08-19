@@ -6,6 +6,7 @@ import {
   toggleUserFollow,
   updateMyPreferences
 } from '../services/api.js';
+import LoadingState from '../components/LoadingState.jsx';
 
 export default function ProfilePage() {
   const { userId } = useParams();
@@ -86,7 +87,7 @@ export default function ProfilePage() {
     }
   }
 
-  if (loading || authLoading) return <div className="route-state">Loading reader profile…</div>;
+  if (loading || authLoading) return <LoadingState label="Loading reader profile…" />;
 
   if (error && !profile) {
     return <div className="details-error"><h1>Profile unavailable</h1><p>{error}</p></div>;

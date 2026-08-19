@@ -29,13 +29,14 @@ export default function LoginPage() {
   return (
     <section className="auth-shell">
       <form className="auth-card" onSubmit={submit}>
+        <span className="auth-brand-mark" aria-hidden="true">B</span>
         <p className="eyebrow purple">Welcome back</p>
         <h1>Login to BookSphere</h1>
         <p className="muted">
           Continue discovering and recommending books with your community.
         </p>
 
-        {error && <div className="form-error">{error}</div>}
+        {error ? <div className="form-error" role="alert">{error}</div> : null}
 
         <label>
           Email

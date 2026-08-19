@@ -131,7 +131,7 @@ export default function SearchPage() {
   return (
     <section className="search-page">
       <div className="search-intro">
-        <p className="eyebrow purple">Phase 3 — Open Library integration</p>
+        <p className="eyebrow purple">Explore the Open Library catalog</p>
         <h1>Search books and recommend what matters.</h1>
         <p>
           Search by title, author, or genre, then use a result to prefill your

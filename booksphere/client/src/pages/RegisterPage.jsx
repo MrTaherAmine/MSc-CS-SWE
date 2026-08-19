@@ -28,13 +28,14 @@ export default function RegisterPage() {
   return (
     <section className="auth-shell">
       <form className="auth-card" onSubmit={submit}>
+        <span className="auth-brand-mark" aria-hidden="true">B</span>
         <p className="eyebrow purple">Join the community</p>
         <h1>Create your BookSphere account</h1>
         <p className="muted">
           Save recommendations, rate books, and build your reading network.
         </p>
 
-        {error && <div className="form-error">{error}</div>}
+        {error ? <div className="form-error" role="alert">{error}</div> : null}
 
         <label>
           Name

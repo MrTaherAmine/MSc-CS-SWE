@@ -1,12 +1,13 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
+import LoadingState from './LoadingState.jsx';
 
 export default function ProtectedRoute({ children }) {
   const { authenticated, loading } = useAuth();
   const location = useLocation();
 
   if (loading) {
-    return <div className="route-state">Checking your session…</div>;
+    return <LoadingState label="Checking your session…" />;
   }
 
   if (!authenticated) {

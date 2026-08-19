@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import StarRating from '../components/StarRating.jsx';
 import { getBookDetails, rateBook } from '../services/api.js';
 import { useAuth } from '../context/AuthContext.jsx';
+import LoadingState from '../components/LoadingState.jsx';
 
 const EMPTY_SUMMARY = {
   average: 0,
@@ -100,7 +101,7 @@ export default function BookDetailsPage() {
   }
 
   if (loading || authLoading) {
-    return <div className="route-state">Loading book details…</div>;
+    return <LoadingState label="Loading book details…" />;
   }
 
   if (error || !book) {

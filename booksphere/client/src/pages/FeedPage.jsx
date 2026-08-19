@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import FeedCard from '../components/FeedCard.jsx';
 import { getPersonalizedFeed } from '../services/api.js';
+import LoadingState from '../components/LoadingState.jsx';
 
 export default function FeedPage() {
   const [items, setItems] = useState([]);
@@ -49,13 +50,13 @@ export default function FeedPage() {
     }
   }
 
-  if (loading) return <div className="route-state">Building your personal feed…</div>;
+  if (loading) return <LoadingState label="Building your personal feed…" />;
 
   return (
     <section className="feed-page">
       <div className="feed-intro">
         <div>
-          <p className="eyebrow purple">Phase 5 — Personalized for you</p>
+          <p className="eyebrow purple">Personalized for you</p>
           <h1>Your BookSphere feed</h1>
           <p>
             Recommendations ranked using your favorite genres, likes, ratings,

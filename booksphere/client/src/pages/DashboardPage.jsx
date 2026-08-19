@@ -7,7 +7,7 @@ export default function DashboardPage() {
   return (
     <section className="dashboard">
       <div className="dashboard-intro">
-        <p className="eyebrow purple">Protected route</p>
+        <p className="eyebrow purple">Your reading space</p>
         <h1>Welcome, {user.name}</h1>
         <p>
           Your authenticated BookSphere space is ready. Search the Open Library
@@ -26,7 +26,7 @@ export default function DashboardPage() {
         </article>
 
         <article className="recommendation-form dashboard-cta">
-          <p className="eyebrow purple">Phase 5</p>
+          <p className="eyebrow purple">Curated for you</p>
           <h2>Your personalized feed is ready</h2>
           <p>
             Discover recommendations ranked using your preferences, ratings,

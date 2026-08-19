@@ -7,6 +7,8 @@ import {
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import SiteHeader from './components/SiteHeader.jsx';
+import SiteFooter from './components/SiteFooter.jsx';
+import LoadingState from './components/LoadingState.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import BookDetailsPage from './pages/BookDetailsPage.jsx';
 import HomePage from './pages/HomePage.jsx';
@@ -21,7 +23,7 @@ function GuestOnly({ children }) {
   const { authenticated, loading } = useAuth();
 
   if (loading) {
-    return <div className="route-state">Checking your session…</div>;
+    return <LoadingState label="Checking your session…" />;
   }
 
   return authenticated ? <Navigate to="/dashboard" replace /> : children;
@@ -30,9 +32,10 @@ function GuestOnly({ children }) {
 function AppRoutes() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <SiteHeader />
 
-      <main className="page">
+      <main className="page" id="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
@@ -78,6 +81,7 @@ function AppRoutes() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+      <SiteFooter />
     </>
   );
 }

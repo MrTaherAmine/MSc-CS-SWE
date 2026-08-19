@@ -4,7 +4,7 @@ BookSphere is a full-stack social book discovery and recommendation platform bei
 
 ## Current Status
 
-**Phase 5/7 — User Interaction and Recommendations Feed**
+**Phase 6/7 — User Interface and Styling**
 
 ### Phase 1 — Foundation
 - React/Vite frontend
@@ -53,6 +53,16 @@ BookSphere is a full-stack social book discovery and recommendation platform bei
 - signals from favorite genres, liked/rated books, authors, followed readers, engagement, quality, and recency
 - protected **For You** feed with cursor pagination
 - indexed social collections, lean projections, capped queries, and on-demand comments
+
+### Phase 6 — User Interface and Styling
+- cohesive responsive design system with reusable color, spacing, radius, and shadow tokens
+- polished discovery, search, authentication, details, feed, profile, and dashboard layouts
+- responsive navigation with an accessible mobile menu
+- desktop, tablet, and mobile breakpoints without framework-specific layout dependencies
+- reusable loading, error, empty, and action states
+- keyboard-visible focus states, a skip link, semantic landmarks, and accessible status messages
+- touch-friendly controls and reduced-motion support
+- consistent footer, branded surfaces, typography, buttons, forms, and book cards
 
 ## External Book API
 
@@ -106,17 +116,16 @@ npm test
 npm run build
 ```
 
-## Phase 5 Workflow
+## Phase 6 Interface Review
 
-1. Log in and open `/feed` from **For You**.
-2. BookSphere builds preference signals from favorite genres, likes, ratings, and follows.
-3. Public recommendations are scored and returned with a human-readable reason.
-4. Like, comment on, or share recommendations directly from the feed.
-5. Open a reader profile to review their liked books, comments, and followers.
-6. Follow the reader to strengthen their recommendations in future feed requests.
-7. Use cursor-based **Load more** retrieval without reloading the existing feed.
+1. Open the public discovery page and resize from desktop to mobile width.
+2. Use the responsive menu at widths below 960px.
+3. Review search, login, and registration forms with keyboard-only navigation.
+4. Log in to review the dashboard, personalized feed, book details, and reader profiles.
+5. Confirm loading, error, empty, success, hover, focus, and disabled states remain readable.
+6. Enable reduced motion in the operating system to disable non-essential animation.
 
-## Phase 5 API
+## Application API
 
 ### Search books
 
@@ -191,11 +200,14 @@ docs/PHASE_4_CHECKLIST.md
 docs/PHASE_5_REPORT.md
 docs/PHASE_5_CHECKLIST.md
 docs/PHASE_5_RECOMMENDATION_ALGORITHM.md
+docs/PHASE_6_REPORT.md
+docs/PHASE_6_CHECKLIST.md
+docs/PHASE_6_USABILITY_TEST.md
 ```
 
 ## Next
 
-**Phase 6/7 — Awaiting the next GOMYCODE phase brief**
+**Phase 7/7 — Awaiting the final GOMYCODE phase brief**
 
 ## Author
 
