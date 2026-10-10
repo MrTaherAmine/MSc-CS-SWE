@@ -1,0 +1,14 @@
+digraph G {
+ graph [label="CyberResilience assessment data flow | transient answers, no database writes",labelloc=t,fontsize=17,fontname="Helvetica-Bold",bgcolor="#ffffff",pad=0.3,ranksep=0.55];
+ node [shape=box,style="rounded,filled",fillcolor="#eaf1f7",color="#829aac",fontname="Helvetica",fontsize=11,margin="0.18,0.12"];
+ edge [color="#376983",fontname="Helvetica",fontsize=9];
+ A[label="1. Browser inputs\n18 choices (0–4)"];
+ B[label="2. HTTPS POST\n/api/score.php"];
+ C[label="3. Validate HTTP method,\nJSON size, structure and IDs"];
+ D[label="4. Normalize six function scores\nand rank three weak functions"];
+ E[label="5. JSON response\nno-store headers"];
+ F[label="6. Results view\nscore + actionable priorities\nprint to PDF"];
+ G[label="Invalid request\nHTTP 4xx",fillcolor="#fde9e9"];
+ A->B->C->D->E->F;
+ C->G[label="reject"];
+ }
